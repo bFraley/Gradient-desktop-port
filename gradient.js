@@ -1,27 +1,27 @@
 /*****************************************************************************
-* 
+*
 * Gradient: an Artificial Life Experiment
 * Copyright (C) 2011 Maxime Chevalier-Boisvert
-* 
+*
 * This file is part of Gradient.
-* 
+*
 * Gradient is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
 * (at your option) any later version.
-* 
+*
 * Gradient is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 * GNU General Public License for more details.
-* 
+*
 * You should have received a copy of the GNU General Public License
 * along with Gradient.  If not, see <http://www.gnu.org/licenses/>.
-* 
+*
 * For more information about this program, please e-mail the
 * author, Maxime Chevalier-Boisvert at:
 * maximechevalierb /at/ gmail /dot/ com
-* 
+*
 *****************************************************************************/
 
 //============================================================================
@@ -314,7 +314,7 @@ function zoomOut()
 	// If we are at the minimum zoom level, stop
 	if (zoomLevel === WORLD_ZOOM_MIN)
 		return;
-	
+
 	// Decrement the zoom level
 	--zoomLevel;
 
@@ -324,14 +324,14 @@ function zoomOut()
     // If zooming out is no longer possible, disable the button
     if (zoomLevel === WORLD_ZOOM_MIN)
         zoomOutButton.disabled = true;
-	
+
 	// Obtain the sprite size for this zoom level
 	var spriteSize = WORLD_SPRITE_SIZES[zoomLevel];
-		
+
 	// Compute the coordinates at the corner of the map
 	var cornerX = world.gridWidth - canvas.width  / spriteSize;
 	var cornerY = world.gridHeight - canvas.height / spriteSize;
-		
+
 	// Update the camera coordinates
 	xCoord = Math.max(0, Math.min(xCoord, cornerX));
 	yCoord = Math.max(0, Math.min(yCoord, cornerY));
@@ -341,7 +341,7 @@ function zoomOut()
 Augment the world update rate
 */
 function goFaster()
-{	
+{
     world.fastMode = true;
 
     realTimeButton.disabled = false;
@@ -430,4 +430,3 @@ function moveDown()
     // Update the coordinates
     yCoord = Math.min(newYCoord, cornerY);
 }
-
