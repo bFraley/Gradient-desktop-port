@@ -62,6 +62,15 @@ function init()
     canvas.width = 512;
     canvas.height = 512;
 
+    canvas.zoomIn = zoomIn
+    canvas.zoomOut = zoomOut
+    canvas.goSlower = goSlower
+    canvas.goFaster = goFaster
+    canvas.moveLeft = moveLeft
+    canvas.moveRight = moveRight
+    canvas.moveUp = moveUp
+    canvas.moveDown = moveDown
+
     // Get a 2D context for the drawing canvas
     canvasCtx = canvas.getContext("2d");
 
